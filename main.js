@@ -1,15 +1,17 @@
 let result = "x";
 let x = "دور"
-let titel = document.querySelector('.top');
+const titel = document.querySelector('.top');
 let squr = [];
+// تحديد الرابح 
 function end(n1, n2, n3) {
     titel.innerHTML = `${squr[n1]} weener`;
-    document.getElementById('item' + n1).style.background = "#000";
-    document.getElementById('item' + n2).style.background = "#000";
-    document.getElementById('item' + n3).style.background = "#000";
-    setInterval(() => { titel.innerHTML += '<sapn>.</span>' }, 1000);
+    document.getElementById('item' + n1).style.background = "red";
+    document.getElementById('item' + n2).style.background = "red";
+    document.getElementById('item' + n3).style.background = "red";
+    setInterval(() => { titel.innerHTML += '<span>.</span>' }, 1000);
     setTimeout(() => location.reload(), 4000)
 }
+// قوانين الربح
 function weener() {
     for (let i = 1; i < 9; i++) {
         squr[i] = document.getElementById("item" + i).innerHTML;
@@ -56,7 +58,7 @@ function weener() {
 }
 
 
-// كتبة xo 
+// تخديد دور  xo 
 function game(id) {
     let elment = document.getElementById(id);
     if (result === 'x' && elment.innerHTML == "") {
@@ -70,4 +72,8 @@ function game(id) {
         titel.innerHTML = `  <span>${result}</span> ${x}`
     }
     weener();
+}
+//اعداة اللعبة عند تالعادل
+function relod() {
+  location.reload()
 }
